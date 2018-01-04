@@ -58,7 +58,7 @@ public class ResFileDecoder {
         }
 
         try {
-            if (typeName.equals("raw")) {
+            if (typeName.equals("raw") || typeName.equals("raw2")) {
                 decode(inDir, inFileName, outDir, outFileName, "raw");
                 return;
             }
@@ -66,7 +66,9 @@ public class ResFileDecoder {
                 decode(inDir, inFileName, outDir, outFileName, "raw");
                 return;
             }
-            if (typeName.equals("drawable") || typeName.equals("mipmap")) {
+
+            if (typeName.equals("drawable") || typeName.equals("mipmap")
+                || typeName.equals("drawable2") || typeName.equals("drawable3")) {
                 if (inFileName.toLowerCase().endsWith(".9" + ext)) {
                     outFileName = outResName + ".9" + ext;
 
